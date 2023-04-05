@@ -1,0 +1,41 @@
+Lmod has detected the following error: These module(s) exist but cannot be
+loaded as requested: "mpi4py"
+   Try: "module spider mpi4py" to see how to load the module(s).
+
+
+
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+    from mpi4py import MPI
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+ModuleNotFoundError: No module named 'mpi4py'
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+srun: error: dp-cn01: tasks 0,5: Exited with exit code 1
+srun: error: dp-cn01: tasks 1-4,6-7: Terminated
+srun: Force Terminated StepId=344121.0

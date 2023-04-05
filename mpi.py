@@ -2,11 +2,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from tqdm import tqdm
+from mpi4py import MPI
 
 # in step one only change N_POINTS 51 201 301 481
 # In step two keep N_POINTS=481 contsnat
 # in step three keep N_POINTS=481 contsnat
-N_POINTS = 51
+N_POINTS = 481
 DOMAIN_SIZE = 1.0
 # In step one keep N_ITERATIONS = 3000
 # In step two change N_ITERATIONS 50 500 1500 3000
@@ -80,8 +81,15 @@ def main():
     if TIME_STEP_LENGTH > STABILITY_SAFETY_FACTOR * maximum_possible_time_step_length:
         raise RuntimeError("Stability is not guarenteed")
 
-    
-    for _ in tqdm(range(N_ITERATIONS)):
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+    size = comm.Get_size()
+
+    chunk_size = N_ITERATIONS // size
+    start = rank * chunk_size
+    end = (rank + 1) * chunk_size
+
+    for _ in tqdm(range(start,end)):
         d_u_prev__d_x = central_difference_x(u_prev)
         d_u_prev__d_y = central_difference_y(u_prev)
         d_v_prev__d_x = central_difference_x(v_prev)
@@ -210,7 +218,7 @@ def main():
         v_prev = v_next
         p_prev = p_next
     
-
+    MPI.Finalize()
     # The [::2, ::2] selects only every second entry (less cluttering plot)
     plt.style.use("dark_background")
     plt.figure()
@@ -221,7 +229,7 @@ def main():
     # plt.streamplot(X[::2, ::2], Y[::2, ::2], u_next[::2, ::2], v_next[::2, ::2], color="black")
     plt.xlim((0, 1))
     plt.ylim((0, 1))
-    plt.savefig('Lid_Driven_Cavity3000_51.png')
+    plt.savefig('Lid_Driven_Cavity.png')
 
 
 if __name__ == "__main__":

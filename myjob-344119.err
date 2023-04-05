@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+Traceback (most recent call last):
+  File "/p/home/jusers/lam1/deep/proj/mpi.py", line 5, in <module>
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+srun: error: dp-cn01: task 0: Exited with exit code 1
+srun: error: dp-cn01: tasks 1-7: Terminated
+srun: Force Terminated StepId=344119.0
